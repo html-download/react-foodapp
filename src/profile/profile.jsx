@@ -25,6 +25,8 @@ class Profile extends Component{
         let data = {
             first_name : this.input.first_name.value(),
             last_name : this.input.last_name.value(),
+            email_id : this.input.email_id.value(),
+            phone_number: this.input.phone_number.value()
         }
 
 console.log("data", data);
@@ -62,29 +64,56 @@ console.log("data", data);
                                     name="last_name"
                                     title="Last Name"
                                     type="text"
-                                    //value={this.input.value}  
-                                    placeholder="Enter Your LastName"
-                                    //onChange={this.handleFirstName}
+                                     placeholder="Enter Your LastName"
                                     />
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col-sm-6">
-                                    <Selecttext/>
+                                    <Selecttext
+                                    ref={ (c)=> (this.input.gender = c) } 
+                                        title="Gender"
+                                        name="gender"
+                                        options = {["Male", "Female"]}
+                                        placeholder ="Select Gender"
+                                        //onChange = {this.handleGender}
+                                       
+                                        />
                                 </div>
 
                                 <div className="col-sm-6">
-                                     <Inputtext />
+                                     <Inputtext 
+                                    ref={(c)=> (this.input.date_of_birth = c)}
+                                    className="form-control"
+                                    name="date_of_birth"
+                                    title="Last Name"
+                                    type="text"
+                                    placeholder="Enter Your LastName"
+                                    />
                                 </div>
                             </div>
 
                             <h3 className="title-border wow fadeInUp">Contact Information</h3>
                             <div className="row">
                                 <div className="col-sm-6">
-                                      <Inputtext />
+                                     <Inputtext 
+                                    ref={(c)=> (this.input.email_id = c)}
+                                    className="form-control"
+                                    name="email_id"
+                                    title="Last Name"
+                                    type="text"
+                                    placeholder="Enter Your Email Id"
+                                   />
                                 </div>
                                 <div className="col-sm-6">
-                                     <Inputtext />
+                                     <Inputtext 
+                                    ref={(c)=> (this.input.phone_number = c)}
+                                    className="form-control"
+                                    name="phone_number"
+                                    title="Last Name"
+                                    type="text"
+                                   placeholder="Enter Your Phone Number"
+                                    />
                                 </div>
                             </div>
                             <div className="row">

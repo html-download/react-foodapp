@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+import ClassName from 'classnames';
+import ControlGroup from '../components/control-group.jsx';
+
 class Inputtext extends Component {
 
 constructor(props){
@@ -18,7 +21,7 @@ render(){
 
 return(
 
-				 <div className="form-group">
+		<ControlGroup groupClasses={this.props.groupClasses}>
                         <label>{this.props.name}</label>
                         <input 
                         ref={(c) => (this.name = c)}
@@ -28,7 +31,7 @@ return(
                         value={this.props.value}
                         onChange={this.props.onChange}
                          />
-                    </div>
+      </ControlGroup>           
 
 
 

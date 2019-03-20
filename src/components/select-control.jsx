@@ -7,15 +7,29 @@ super(props);
 
 }
 
+value(){
+	return this.name.value;
+   } 
+
 render(){
 
 return(
 			<div className="form-group">
-                                <label>Gender</label>
-                                <select class="form-control">
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                </select>
+                <label htmlFor={this.props.name}>{this.props.title}</label>
+                              <select
+      name={this.props.name}
+      value={this.props.value}
+      onChange={this.props.onChange}
+      className="form-select">
+      <option value="">{this.props.placeholder}</option>
+      {this.props.options.map( (opt) => {
+        return (
+          <option
+            key={opt}
+            value={opt}>{opt}</option>
+        );
+      })}
+    </select>
                             </div>
 
     )
