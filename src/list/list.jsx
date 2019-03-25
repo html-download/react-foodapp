@@ -202,4 +202,16 @@ return(
     }
    }
 
+
+ store.dispatch({
+    type: "REQUEST",
+    payload: fetch('http://localhost:8000/list').then((res)=>res.json())
+});
+
+
+
 export default List; 
+
+
+
+    
