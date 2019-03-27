@@ -1,23 +1,24 @@
 import React, {Component} from 'react';
 import Placeholder from '../components/placeholder.jsx';
+import {createStore} from 'redux';
 import Restaurantlist from './reslist';
-
+const store = createStore();
 class List extends Component{
 
    constructor(props) {
     super(props);
-    this.state ={
+    /*this.state ={
        restaurants:[],
         error: null,
       isLoaded: false,
-    };
+    };*/
    }
 
 
 
 componentDidMount()
     {
-        fetch(' https://opentable.herokuapp.com/api/restaurants?state=IL').then((Response) => Response.json()).then((findresponse) =>
+        /*fetch(' https://opentable.herokuapp.com/api/restaurants?state=IL').then((Response) => Response.json()).then((findresponse) =>
             {
                 this.setState({
                 isLoaded: true,
@@ -34,7 +35,12 @@ componentDidMount()
           });
         }
 
-        )
+        )*/
+
+    store.dispatch({
+    type: "REQUEST",
+    payload: fetch('https://opentable.herokuapp.com/api/restaurants?state=IL').then((res)=>res.json())
+});
 
 
  }
@@ -201,5 +207,6 @@ return(
     )
     }
    }
+
 
 export default List; 
