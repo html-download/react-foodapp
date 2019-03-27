@@ -8,14 +8,14 @@ const initialState ={
 
 const  reducer = (state = initialState, action) => {
 
-const newstate = {...state}
+
 
 	if(action.type === 'REQUEST')
 	{
-		 return [...state, action.payload];
+		 return {restaurants: action.payload};
 	}
 
-return newState;
+   return state;
 
 };
 

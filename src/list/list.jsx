@@ -18,13 +18,17 @@ class List extends Component{
 
 componentDidMount()
     {
-        /*fetch(' https://opentable.herokuapp.com/api/restaurants?state=IL').then((Response) => Response.json()).then((findresponse) =>
-            {
-                this.setState({
+        fetch(' https://opentable.herokuapp.com/api/restaurants?state=IL').then((Response) => Response.json()).then((findresponse) =>
+        {
+            /*this.setState({
                 isLoaded: true,
                 restaurants : findresponse.restaurants
 
-            })
+            })*/
+            store.dispatch({
+                type: "REQUEST",
+                payload: findresponse.restaurants
+            });
                     
         },
 
@@ -35,12 +39,12 @@ componentDidMount()
           });
         }
 
-        )*/
+        )
 
-    store.dispatch({
-    type: "REQUEST",
-    payload: fetch('https://opentable.herokuapp.com/api/restaurants?state=IL').then((res)=>res.json())
-});
+    /*store.dispatch({
+        type: "REQUEST",
+        payload: fetch('https://opentable.herokuapp.com/api/restaurants?state=IL').then((res)=>res.json())
+    });*/
 
 
  }
