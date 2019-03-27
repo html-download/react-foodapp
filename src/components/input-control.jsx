@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import ClassName from 'classnames';
 import ControlGroup from '../components/control-group.jsx';
 
 class Inputtext extends Component {

@@ -1,3 +1,6 @@
+import {createStore} from 'redux';
+
+
 const initialState ={
 
 	restaurants:[]
@@ -6,21 +9,17 @@ const initialState ={
 const  reducer = (state = initialState, action) => {
 
 const newstate = {...state}
-}
 
-if(action.type === 'REQUEST')
-{
+	if(action.type === 'REQUEST')
+	{
+		 return [...state, action.payload];
+	}
 
-}
-
-
-
-
-
-	return newState;
+return newState;
 
 };
 
 
+const store = createStore(reducer);
 
 export default reducer; 

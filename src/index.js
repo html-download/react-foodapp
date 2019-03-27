@@ -5,6 +5,6 @@ import {Provider} from 'react-redux';
 
 ReactDOM.render(AppUniversal, document.getElementById('app')); 
 import reducer from './store/reducer';
-const store = createStore(reducer);
+
 
 ReactDOM.render(<Provider store={store}> AppUniversal</Provider>, document.getElementById('app')); 

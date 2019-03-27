@@ -209,4 +209,19 @@ return(
    }
 
 
+<<<<<<< HEAD
 export default List; 
+=======
+ store.dispatch({
+    type: "REQUEST",
+    payload: fetch('http://localhost:8000/list').then((res)=>res.json())
+});
+
+
+
+export default List; 
+
+
+
+    
+>>>>>>> 92f846523979134185605c6f960cf1e14e16f2ad
