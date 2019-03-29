@@ -3,8 +3,7 @@ import AppUniversal from  './appuniversal';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
-ReactDOM.render(AppUniversal, document.getElementById('app')); 
-import reducer from './store/reducer';
+const store = createStore();
 
 
-ReactDOM.render(<Provider store={store}> AppUniversal</Provider>, document.getElementById('app')); 
+ReactDOM.render(<AppUniversal store={store}/>, document.getElementById('app')); 
