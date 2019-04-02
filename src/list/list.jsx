@@ -4,16 +4,16 @@ import {createStore} from 'redux';
 import Restaurantlist from './reslist';
 import Reducer from '../store/reducer.jsx';
 
-const store = createStore();
+const store = createStore(reducer);
 class List extends Component{
 
    constructor(props) {
     super(props);
-    /*this.state ={
+    this.state ={
        restaurants:[],
         error: null,
       isLoaded: false,
-    };*/
+    };
    }
 
 
@@ -22,11 +22,11 @@ componentDidMount()
     {
         fetch(' https://opentable.herokuapp.com/api/restaurants?state=IL').then((Response) => Response.json()).then((findresponse) =>
         {
-            /*this.setState({
+        this.setState({
                 isLoaded: true,
-                restaurants : findresponse.restaurants
+                restaurants : reducer
 
-            })*/
+            })
             store.dispatch({
                 type: "REQUEST",
                 payload: findresponse.restaurants
@@ -214,14 +214,14 @@ return(
     }
    }
 
-
+/*
 
 
  store.dispatch({
     type: "REQUEST",
     payload: fetch('http://localhost:8000/list').then((res)=>res.json())
 });
-
+*/
 
 
 export default List; 
