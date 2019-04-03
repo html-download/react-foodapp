@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Switch} from 'react-router-dom';
+import { Provider } from 'react-redux'
+
 
 import './assets/css/style.css';
 import './assets/css/bootstrap.min.css';
@@ -16,10 +18,12 @@ import Footer from './footer.jsx';
 import Home from './home/home.jsx';
 import Listing from './list/list.jsx';
 import Profile from './profile/profile.jsx';
-/*import Details from './details/details.jsx';*/
 
-const AppUniversal =  (
+
+const AppUniversal = ({ store }) => (
+
 		
+		<Provider store={store}>
            <Router>
 				<div>
 				    <Route component={Header}/>
@@ -34,10 +38,13 @@ const AppUniversal =  (
 						<Footer />
 					</div>
 				</Router> 
+		</Provider>
 		
-		
+
 			
 	)
+
+
 
 
 export default AppUniversal;

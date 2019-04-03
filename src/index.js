@@ -1,10 +1,11 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
 import AppUniversal from  './appuniversal';
-import {createStore} from 'redux';
-import {Provider} from 'react-redux';
-
-ReactDOM.render(AppUniversal, document.getElementById('app')); 
 import reducer from './store/reducer';
+import { createStore } from 'redux';
 
 
-ReactDOM.render(<Provider store={store}> AppUniversal</Provider>, document.getElementById('app')); 
+const store = createStore(reducer);
+
+
+ReactDOM.render(<AppUniversal store={store}/>, document.getElementById('app')); 
